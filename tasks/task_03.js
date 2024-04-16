@@ -4,9 +4,15 @@
 * */
 
 function getVowelsCount(str) {
+  const vowelsRegex = /[aeiouy]/gi;
 
+  const vowelsArray = str.match(vowelsRegex);
+  if (!vowelsArray) {
+    return 0;
+  }
+
+  return vowelsArray.length;
 }
-
 
 
 

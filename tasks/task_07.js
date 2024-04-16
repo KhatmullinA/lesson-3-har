@@ -7,7 +7,24 @@
 // runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb")
 //  // => [[34,'a'], [3,'b']]
 function runLengthEncoding(str) {
-    return []
+  if (!str) return []; // Обработка пустой строки
+
+  const encoded = [];
+  let currentChar = str[0];
+  let currentCount = 1;
+
+  for (let i = 1; i < str.length; i++) {
+    if (str[i] === currentChar) {
+      currentCount++;
+    } else {
+      encoded.push([currentCount, currentChar]);
+      currentChar = str[i];
+      currentCount = 1;
+    }
+  }
+
+  encoded.push([currentCount, currentChar]);
+  return encoded;
 }
 
 

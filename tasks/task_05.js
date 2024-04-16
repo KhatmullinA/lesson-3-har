@@ -3,9 +3,13 @@
 * */
 
 function abs(array) {
-
+  if (!Array.isArray(array) || array.length === 0) {
+    return 0; 
+  }
+  const sum = array.reduce((acc, curr) => acc + curr, 0);
+  const average = sum / array.length;
+  return Math.round(average * 10) / 10;
 }
-
 
 
 

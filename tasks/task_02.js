@@ -3,8 +3,11 @@
 * */
 
 function isPalindrome(str) {
-
+  str = str.replace(/\s/g, '').toLowerCase();
+  const reversedStr = str.split('').reverse().join('');
+  return str === reversedStr;
 }
+
 
 
 
